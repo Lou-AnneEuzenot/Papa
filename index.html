@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My first event listener 🐣</title>
+    <link rel="shortcut icon" href="data:image/x-icon;" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Import Stimulus using Import maps -->
+    <script async src="https://ga.jspm.io/npm:es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "@hotwired/stimulus": "https://unpkg.com/@hotwired/stimulus/dist/stimulus.js"
+        }
+      }
+    </script>
+
+    <!-- Import canvas-confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+    <style>
+      body {
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      #clickme {
+        font-size: 2rem; /* Larger font size */
+        background-color: pink; /* Pink background color */
+        color: white; /* White text color */
+        border: 2px dashed white; /* Dashed white border */
+        padding: 1rem 2rem; /* Larger padding */
+        border-radius: 10px; /* Rounded corners */
+      }
+
+      #clickme:disabled {
+        background-color: lightgray; /* Gray background when disabled */
+        border-color: gray; /* Gray border when disabled */
+      }
+
+      .big-text {
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 4rem; /* Enorme texte */
+        color: rgb(250, 66, 139);
+        font-weight: bold;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="clickme" class="btn btn-lg" data-controller="event-listener" data-action="click->event-listener#disable">
+      Clique ici!
+    </button>
+
+    <script src="index.js" type="module"></script> <!-- Assuming the index.js is in the same directory -->
+  </body>
+</html>
